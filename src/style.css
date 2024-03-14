@@ -1,0 +1,42 @@
+#titulo{
+    color: aquamarine;
+}
+
+header{                                              /* color de la parte superior*/
+    color: rgb(206, 21, 175);               
+    font-size: 25px;
+    background-image: url(imagen/portada.png);
+    background-size: cover;
+    background-position: top;
+  }
+
+textarea[name="user-input"]{
+    padding: 11px;                         /* el padding es el espacio o marguen que debe haber dentro de la caja
+                                               espacio dentre del elementos-relleno-marco*/
+    
+    margin: top 10px;                             /* el margen es el espacio o marguen fuera del elemento*/
+    margin: right 10px;                            /*espacio entre los dos elemtos */
+    margin: bottom 10px;
+    margin: left 10px;
+}
+
+.li{
+    background-color: rgb(196, 163, 226);
+    color: brown;
+    border-radius: 3px;
+    padding: 4px;                /*padding espacio dentro del texto o caja y margin espacio entre ambos textos o cajas*/
+    margin: 8px;
+
+}
+
+#reset-button {
+background-color: aquamarine;
+border-radius: 5px;
+cursor: pointer;
+}
+
+footer{
+    background-color: rgb(45, 12, 83);
+    border-radius: 70px;
+    color: white;
+}
