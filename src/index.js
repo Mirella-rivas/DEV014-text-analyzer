@@ -13,37 +13,37 @@ const sextaRespuesta = document.querySelector('li[ data-testid="word-length-aver
 
 cuadroDeTexto.addEventListener("input", function () {
 
-   //INDICADOR 1
-   primeraRespuesta.textContent = "Recuento de palabras:" + analyzer.getWordCount(cuadroDeTexto.value);
-   //INDICADOR 2
-   segundaRespuesta.textContent = "Recuento de caracteres: " + analyzer.getCharacterCount(cuadroDeTexto.value);
-   //INDICADOR 3
-   terceraRespuesta.textContent = "Recuento de caracteres excluyendo espacios y signos de puntuación: " + analyzer.getCharacterCountExcludingSpaces(cuadroDeTexto.value);
-   //INDICADOR 4
-   cuartaRespuesta.textContent= "Recuento de números: " + analyzer.getNumberCount(cuadroDeTexto.value);
-   //INDICADOR 5
-   quintaRespuesta.textContent = "Suma total de números: " + analyzer.getNumberSum(cuadroDeTexto.value);
-   //INDICADOR 6
-   sextaRespuesta.textContent= "Longitud media de las palabras: " + analyzer.getAverageWordLength(cuadroDeTexto.value);
+  //INDICADOR 1
+  primeraRespuesta.textContent = "Recuento de palabras:" + analyzer.getWordCount(cuadroDeTexto.value);
+  //INDICADOR 2
+  segundaRespuesta.textContent = "Recuento de caracteres: " + analyzer.getCharacterCount(cuadroDeTexto.value);
+  //INDICADOR 3
+  terceraRespuesta.textContent = "Recuento de caracteres excluyendo espacios y signos de puntuación: " + analyzer.getCharacterCountExcludingSpaces(cuadroDeTexto.value);
+  //INDICADOR 4
+  cuartaRespuesta.textContent= "Recuento de números: " + analyzer.getNumberCount(cuadroDeTexto.value);
+  //INDICADOR 5
+  quintaRespuesta.textContent = "Suma total de números: " + analyzer.getNumberSum(cuadroDeTexto.value);
+  //INDICADOR 6
+  sextaRespuesta.textContent= "Longitud media de las palabras: " + analyzer.getAverageWordLength(cuadroDeTexto.value);
 
 })
 
 function limpiarTexto() {
-   cuadroDeTexto.value = " ";          //LIMPIAR EL CUADRO DE TEXTO
-   /*
+  cuadroDeTexto.value = " ";          //LIMPIAR EL CUADRO DE TEXTO
+  /*
    const indicadores = document.querySelectorAll('.li');          //RESTABLECER INDICADORES A 0
    indicadores.forEach(indicador => {
       indicador.innerHTML = indicador.dataset.testid + ": 0";
    });*/
 }
 document.getElementById('reset-button').addEventListener('click', () =>{
-   limpiarTexto()
-   primeraRespuesta.textContent = "Recuento de palabras: "
-   segundaRespuesta.textContent = "Recuento de caracteres: "
-   terceraRespuesta.textContent = "Recuento de caracteres excluyendo espacios y signos de puntuación: "
-   cuartaRespuesta.textContent = "Recuento de números: " 
-   quintaRespuesta.textContent = "Suma total de números: "
-   sextaRespuesta.textContent = "Longitud media de las palabras: "
+  limpiarTexto()
+  primeraRespuesta.textContent = "Recuento de palabras: "
+  segundaRespuesta.textContent = "Recuento de caracteres: "
+  terceraRespuesta.textContent = "Recuento de caracteres excluyendo espacios y signos de puntuación: "
+  cuartaRespuesta.textContent = "Recuento de números: " 
+  quintaRespuesta.textContent = "Suma total de números: "
+  sextaRespuesta.textContent = "Longitud media de las palabras: "
 })
 
 
