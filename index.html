@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Mi Analizador de texto</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+ 
+  <header>
+    <h1>Analizador de texto</h1>
+  </header>
+  <main>
+    <textarea name="user-input" cols="30" rows="10" placeholder="Ingresa tu texto"></textarea>
+    <ul>
+      <li class= "li" data-testid="word count">Recuento de palabras: </li>
+      <li class= "li" data-testid="character-count">Recuento de caracteres: </li>
+      <li class= "li" data-testid="character-no-spaces-count">Recuento de caracteres excluyendo espacios y signos de puntuación: </li>
+      <li class= "li" data-testid="number-count">Recuento de números: </li>
+      <li class= "li" data-testid="number-sum">Suma total de números: </li>
+      <li class= "li" data-testid="word-length-average">Longitud media de las palabras: </li>
+    </ul>
+   
+    <button id="reset-button" type="button">LIMPIAR</button>
+    
+  </main>
+
+  <footer>
+    <p>Derechos de autor &copy;Mirella</p>
+  </footer>
+
+ <script src="index.js" type="module"></script>
+
+</body>
+</html>
