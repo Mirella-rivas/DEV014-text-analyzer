@@ -27,13 +27,13 @@ const analyzer = {
   },*/
 
   getCharacterCountExcludingSpaces: (text) => {
-    // Inicializamos una variable para almacenar el conteo de caracteres
-    let count = 0;
+
+    let count = 0;                                                                 // Inicializamos una variable para almacenar el conteo de caracteres
 
     // Recorremos cada carácter en el texto
-    for (let i = 0; i < text.length; i++) {
-      // Si el carácter actual no es un espacio ni un signo de puntuación, incrementamos el contador
-      if (text[i] !== ' ' && !(',.;:!?\'"-()[]{}').includes(text[i])) {   // el caracter en la posicion i
+    for (let i = 0; i < text.length; i++) {                                          // Si el carácter actual no es un espacio ni un signo de puntuación, incrementamos el contador
+
+      if (text[i] !== ' ' && !(',.;:!?\'"-()[]{}').includes(text[i])) {                // el caracter en la posicion i
         count++;
       }
     }
@@ -45,26 +45,26 @@ const analyzer = {
 
 
   getNumberCount: (text) => {
-    // Dividimos la cadena en grupos separados por espacios
-    const groups = text.split(' ');
 
-    let count = 0; // Inicializamos el contador
+    const groups = text.split(' ');                                                            // Dividimos la cadena en grupos separados por espacios
+
+    let count = 0;                                                                               // Inicializamos el contador
 
     // Iteramos sobre cada grupo
     for (let i = 0; i < groups.length; i++) {
-      let group = groups[i];
+      let resultado = groups[i];
 
-      console.log(`Analizando grupo: "${group}"`);
+      console.log(`Analizando grupo: "${resultado}"`);
 
-      // Eliminamos los puntos al final de cada grupo
-      if (group.endsWith('.')) {
-        group = group.slice(0, -1);
-        console.log(`Se encontró un punto al final, eliminándolo: "${group}"`);
+
+      if (resultado.endsWith('.')) {                                                         // Eliminamos los puntos al final de cada grupo
+        resultado = resultado.slice(0, -1);
+        console.log(`Se encontró un punto al final, eliminándolo: "${resultado}"`);
       }
 
-      // Comprobamos si el grupo es un número después de quitar los puntos al final
-      if (!isNaN(group)) {
-        console.log(`El grupo "${group}" es un número.`);
+
+      if (!isNaN(resultado)) {                                                           // Comprobamos si el grupo es un número después de quitar los puntos al final
+        console.log(`El grupo "${resultado}" es un número.`);
         count++; // Incrementamos el contador si es un número válido
 
       }
@@ -93,33 +93,11 @@ const analyzer = {
  },*/
 
 
-
-
-
-
-  /*getNumberSum: (text) => {
-       let suma = 0
-      const numbers= text.match(/\d+/g);
-      if (!numbers) {
-        return 0;
-      }
-      else {
-    
-       //let suma = 0
-        for ( let i=0 ; i< numbers.length ; i++) {
-        suma = suma + numbers[i];
-       }
-       return suma;
-      }
-      //TODO: esta función debe retornar la suma de todos los números que se encuentran en el parámetro `text` de tipo `string`.
-    }, */
-
-
   getNumberSum: (text) => {
-    // Dividimos la cadena en grupos separados por espacios
-    const groups = text.split(' ');
 
-    let sum = 0; // Inicializamos el contador
+    const groups = text.split(' ');                                                        // Dividimos la cadena en grupos separados por espacios
+
+    let sum = 0;                                                                         // Inicializamos el contador
 
     // Iteramos sobre cada grupo
     for (let i = 0; i < groups.length; i++) {
@@ -144,9 +122,23 @@ const analyzer = {
     return sum;
   },
 
+  getAverageWordLength(text) {
+    if (!text.trim()) {
+      return 0;
+    }
+
+    const words = text.split(' ');
+    let totalLength = 0;
+
+    for (let i = 0; i < words.length; i++) {
+      totalLength += words[i].length;
+    }
+
+    return parseFloat((totalLength / words.length).toFixed(2));
+  }
 
 
-  getAverageWordLength: (text) => {
+  /*getAverageWordLength: (text) => {
     if (!text.trim()) {
       return 0
     }
@@ -159,7 +151,7 @@ const analyzer = {
 
 
     //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
-  },
+  }, */
 
 
 };
