@@ -1,9 +1,9 @@
 const analyzer = {
 
   getWordCount: (text) => {
-    text = text.trim(); //elimina los espacios en blanco que pueden haber en los extremos
+    text = text.trim();                                           //elimina los espacios en blanco que pueden haber en los extremos
 
-    const words = text.split(/\s+/); //ayuda a dividir el texto con los espacios en blanco o tabulaciones o saltos para ver cuantas palabras hay
+    const words = text.split(/\s+/);                                     //ayuda a dividir el texto con los espacios en blanco o tabulaciones o saltos para ver cuantas palabras hay
 
     return words.length;
 
@@ -20,11 +20,29 @@ const analyzer = {
   },
 
 
-  getCharacterCountExcludingSpaces: (text) => {
-    //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
+  /*getCharacterCountExcludingSpaces: (text) => {
+    TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
     const textolimpio = text.replace(/[^\w\s]/g, '').replace(/\s+/g, ''); //regex una expresion de comparacion estricta para numeros enteros y decimales(esunalimitante)
     return textolimpio.length;
+  },*/
+
+  getCharacterCountExcludingSpaces: (text) => {
+    // Inicializamos una variable para almacenar el conteo de caracteres
+    let count = 0;
+
+    // Recorremos cada carácter en el texto
+    for (let i = 0; i < text.length; i++) {
+      // Si el carácter actual no es un espacio ni un signo de puntuación, incrementamos el contador
+      if (text[i] !== ' ' && !(',.;:!?\'"-()[]{}').includes(text[i])) {   // el caracter en la posicion i
+        count++;
+      }
+    }
+
+    return count;
+
   },
+
+
 
   getNumberCount: (text) => {
     // Dividimos la cadena en grupos separados por espacios
@@ -118,7 +136,7 @@ const analyzer = {
       // Comprobamos si el grupo es un número después de quitar los puntos al final
       if (!isNaN(group)) {
         console.log(`El grupo "${group}" es un número.`);
-        sum= sum+Number(group); // Incrementamos el contador si es un número válido
+        sum = sum + Number(group); // Incrementamos el contador si es un número válido
       }
     }
 
